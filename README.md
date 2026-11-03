@@ -1,5 +1,30 @@
-KNIME .zip and cleanData might not be up-to-date due to manual updating of files.
+# Website (D3 v7) — Prototype 1
 
-Refer to [KNIME Community Hub](https://hub.knime.com/s/6tZKsNP9LNmdqw4W) for latest [workflow](Group8_hospitalised_injuries.zip) updates. 
+Static HTML/CSS/JS site, no build step.
 
-Refer to [Google Drive](https://drive.google.com/drive/folders/13KCikQZjtSLumRjEGlhHJ70G8-l9Ev2w?usp=sharing) for latest [cleanData](cleanData) updates.
+- `index.html` – story layout, one section per research question (Q1–Q5)
+- `css/style.css` – colours, fonts, layout (light and dark mode)
+- `js/q1.js` – Q1 chart: annual line 2011–2021, monthly line 2019–2021, table view
+- `data/` – copies of Nicole's KNIME exports from `../cleanData`
+
+Status: Q1 works. Q2–Q5 are placeholders with the draft findings text.
+
+## Run locally
+
+`d3.csv` cannot read files over `file://`, so use a local server:
+
+```
+cd website
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000. (VS Code "Live Server" also works.)
+
+## Update the data
+
+Replace the CSVs in `data/` with new exports. Keep the same file and column names.
+
+## Deploy on Vercel
+
+Import the GitHub repo in Vercel, set **Root Directory** to `website`,
+Framework Preset "Other", no build command. Every push to the branch redeploys.
