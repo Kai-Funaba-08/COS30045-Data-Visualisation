@@ -55,8 +55,26 @@
     <section id="q2" class="story placeholder" aria-labelledby="q2-title">
       <p class="q-num">Question 2</p>
       <h2 id="q2-title">Which road users drove the change?</h2>
-      <p>Cyclists rose by 2,772, which is 50.7% of the net rise of 5,472. Their share went from 15.8% to 20.7%. In 2020, cyclists rose 14.1% while car drivers fell 9.4% and pedestrians fell 22.5%.</p>
-      <div class="chart-placeholder"><span>Coming in Prototype 2: diverging bar chart of change by road user, with a year selector.</span></div>
+      <p>Cyclists rose by <strong>2,772</strong> between 2011 and 2021, which is 50.7% of the net rise of 5,472. Their share went from 15.8% to 20.7%. In 2020, cyclists rose 14.1% while car drivers fell 9.4% and pedestrians fell 22.5%.</p>
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Choose years">
+          <label class="select-label">From <select id="q2-from"></select></label>
+          <label class="select-label">To <select id="q2-to"></select></label>
+          <button type="button" class="seg" data-preset="2011-2021">2011 → 2021</button>
+          <button type="button" class="seg" data-preset="2019-2020">2019 → 2020</button>
+          <button type="button" class="seg seg-table" id="q2-table-btn" aria-pressed="false">Table</button>
+        </div>
+        <h3 class="chart-title" id="q2-chart-title">Change in hospitalisations by road user</h3>
+        <div class="legend-row" aria-hidden="true"> 
+          <span><i class="swatch bar-up-sw"></i>Increase</span>
+          <span><i class="swatch bar-down-sw"></i>Decrease</span>
+        </div>
+        <div id="q2-chart" class="chart chart-auto" role="img" aria-labelledby="q2-chart-title" aria-describedby="q2-summary"></div>
+        <div id="q2-table" class="table-view" hidden></div>
+        <p id="q2-summary" class="chart-note"></p>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (road_user_annual.csv).</p>
+      </div>
+
     </section>
 
     <section id="q3" class="story placeholder" aria-labelledby="q3-title">
@@ -94,5 +112,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="js/q1.js"></script>
+  <script src="js/q2.js"></script>
 </body>
 </html>
