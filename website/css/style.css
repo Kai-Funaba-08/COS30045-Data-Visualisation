@@ -230,3 +230,18 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
 .zero-line { stroke: var(--text-muted); stroke-width: 1px; }
 .cat-label { fill: var(--text-secondary); font-size: 12px; font-family: var(--font); }
 .val-label { fill: var(--text-primary); font-size: 12px; font-family: var(--font); font-variant-numeric: tabular-nums; }
+
+/* Q3 heatmap */
+.cell { stroke: none; }
+.cell:hover { stroke: var(--text-primary); stroke-width: 1.5px; }
+.cell-label { font-size: 11px; font-weight: 600; font-family: var(--font); pointer-events: none; }
+.legend-scale { margin: 4px 0 4px; }
+.legend-text { fill: var(--text-muted); font-size: 11px; font-family: var(--font); }
+
+/* Q4 small multiples */
+.sm-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; margin-top: 8px; }
+.sm-title { font-size: 13px; font-weight: 600; margin: 0 0 2px; color: var(--text-primary); }
+.sm-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.break-band { fill: var(--break-band); }
+.break-label { fill: var(--text-muted); font-size: 10px; font-family: var(--font); }
+@media (max-width: 760px) { .sm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
