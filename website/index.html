@@ -51,7 +51,7 @@
       <p>The sharpest monthly drop came in <strong>April 2020</strong>, with 2,357 hospitalisations, 32.4% below April 2019. This dip <em>coincides with</em> the first COVID-19 restrictions, when far fewer people were travelling. The data shows timing only; it cannot show that the restrictions caused the fall.</p>
     </section>
 
-    <!-- Q2–Q5: placeholders for Prototype 2 -->
+    <!-- Q2 -->
     <section id="q2" class="story placeholder" aria-labelledby="q2-title">
       <p class="q-num">Question 2</p>
       <h2 id="q2-title">Which road users drove the change?</h2>
@@ -77,11 +77,33 @@
 
     </section>
 
+    <!-- Q3 -->
     <section id="q3" class="story placeholder" aria-labelledby="q3-title">
       <p class="q-num">Question 3</p>
       <h2 id="q3-title">Who is most affected by age and sex?</h2>
-      <p>From 2011 to 2021, ages 65–74 rose 53.4% and ages 17–25 fell 1.0%, against 16.1% overall. Males were 65.3% of 2021 cases. In 2020, females fell 11.8% and males only 0.7%.</p>
-      <div class="chart-placeholder"><span>Coming in Prototype 2: age-by-year heatmap, plus male and female lines.</span></div>
+      <p>From 2011 to 2021, hospitalisations of people aged <strong>65–74 rose 53.4%</strong>, while ages 17–25 fell 1.0%, against 16.1% overall.</p>
+
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Colour by">
+          <button type="button" class="seg" data-value="change" aria-pressed="true">Change since 2011</button>
+          <button type="button" class="seg" data-value="count" aria-pressed="false">Count</button>
+        </div>
+        <h3 class="chart-title" id="q3-heat-title">Hospitalisations by age group and year</h3>
+        <div id="q3-legend" class="legend-scale"></div>
+        <div id="q3-heatmap" class="chart chart-auto" role="img" aria-labelledby="q3-heat-title"></div>
+        <p class="chart-note">Hover a cell for the count. The 2021 column shows the change since 2011.</p>
+      </div>
+
+      <p>Males were <strong>65.3%</strong> of 2021 cases. In 2020, female hospitalisations fell 11.8% but male hospitalisations fell only 0.7%.</p>
+      <div class="chart-card">
+        <h3 class="chart-title" id="q3-lines-title">Hospitalisations per year by sex</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch series-1"></i>Male</span>
+          <span><i class="swatch series-2"></i>Female</span>
+        </div>
+        <div id="q3-lines" class="chart chart-auto" role="img" aria-labelledby="q3-lines-title"></div>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (age_annual.csv, sex_annual.csv). "Missing" age and sex records are left out.</p>
+      </div>
       <p class="caveat">These are counts, so differences in population size and age structure explain part of the gaps.</p>
     </section>
 
@@ -114,5 +136,6 @@
   <script src="js/q1.js"></script>
   <script src="js/common.js"></script>
   <script src="js/q2.js"></script>
+  <script src="js/q3.js"></script>
 </body>
 </html>
