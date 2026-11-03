@@ -81,7 +81,7 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
 
 .story { padding: 48px 0; border-bottom: 1px solid var(--border); }
 .story h2 { font-size: clamp(22px, 3.4vw, 28px); line-height: 1.25; margin: 0 0 16px; }
-.story p { color: var(--text-secondary); max-width: 68ch; }
+.story p { color: var(--text-secondary); }
 .story strong { color: var(--text-primary); }
 
 .chart-card {
