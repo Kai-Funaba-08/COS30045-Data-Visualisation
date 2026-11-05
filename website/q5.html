@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q5 First Nations people · Road Injuries in Australia</title>
+  <meta name="description" content="How do First Nations patterns compare, within the data's limits?">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-q5">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap site-nav-inner">
+      <a class="brand" href="index.html">Road Injuries in Australia</a>
+      <ol class="nav-links">
+        <li><a href="q1.html"><span class="nav-num">Q1</span> <span class="nav-name">National trend</span></a></li>
+        <li><a href="q2.html"><span class="nav-num">Q2</span> <span class="nav-name">Road users</span></a></li>
+        <li><a href="q3.html"><span class="nav-num">Q3</span> <span class="nav-name">Age and sex</span></a></li>
+        <li><a href="q4.html"><span class="nav-num">Q4</span> <span class="nav-name">States</span></a></li>
+        <li><a href="q5.html" aria-current="page"><span class="nav-num">Q5</span> <span class="nav-name">First Nations</span></a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap page-main">
+
+    <section id="q5" class="story" aria-labelledby="q5-title">
+      <p class="q-num">Question 5</p>
+      <h2 id="q5-title">How do First Nations patterns compare, within the data’s limits?</h2>
+      <p>First Nations hospitalisations rose <strong>90.2%</strong> from 2011 to 2021, against 14.9% for non-Indigenous Australians. In 2020 they rose 23.4% while non-Indigenous counts fell 6.1%.</p>
+
+      <div class="chart-card">
+        <h3 class="chart-title" id="q5-lines-title">Hospitalisations indexed to 2011 (2011 = 100)</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch series-1"></i>First Nations people</span>
+          <span><i class="swatch series-2"></i>Non-Indigenous</span>
+        </div>
+        <div id="q5-lines" class="chart chart-auto" role="img" aria-labelledby="q5-lines-title"></div>
+        <p class="chart-note">Indexing puts both groups on the same scale, so the lines show growth, not size.</p>
+      </div>
+
+      <div class="chart-card">
+        <div class="controls">
+          <label class="select-label">Year <select id="q5-year"></select></label>
+        </div>
+        <h3 class="chart-title" id="q5-bars-title">Where people lived: share by remoteness area</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch seg-1"></i>Major Cities</span>
+          <span><i class="swatch seg-2"></i>Regional</span>
+          <span><i class="swatch seg-3"></i>Remote</span>
+        </div>
+        <div id="q5-bars" class="chart chart-auto" role="img" aria-labelledby="q5-bars-title" aria-describedby="q5-summary"></div>
+        <p id="q5-summary" class="chart-note"></p>
+        <p class="source">Source: AIHW/BITRE First Nations hospitalised injury data, cleaned in KNIME (first_nation_annual.csv, first_nations_remoteness.csv).</p>
+      </div>
+      <p class="caveat">These are counts. Population size, age structure and better recording of First Nations status over time may all contribute to the differences.</p>
+    </section>
+
+    <nav class="pager" aria-label="Question pages">
+      <a class="pager-link pager-prev" href="q4.html"><span class="pager-dir">← Previous</span><span class="pager-name">Q4 · States and territories</span></a>
+      <a class="pager-link pager-next" href="index.html"><span class="pager-dir">Finish →</span><span class="pager-name">Back to overview</span></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Group 8 · COS30045 · Data: Bureau of Infrastructure and Transport Research Economics (BITRE). Prototype 1, November 2026.</p>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/q5.js"></script>
+</body>
+</html>

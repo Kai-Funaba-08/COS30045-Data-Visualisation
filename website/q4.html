@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q4 States and territories · Road Injuries in Australia</title>
+  <meta name="description" content="How do state and territory trends differ, and what do raw counts hide?">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-q4">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap site-nav-inner">
+      <a class="brand" href="index.html">Road Injuries in Australia</a>
+      <ol class="nav-links">
+        <li><a href="q1.html"><span class="nav-num">Q1</span> <span class="nav-name">National trend</span></a></li>
+        <li><a href="q2.html"><span class="nav-num">Q2</span> <span class="nav-name">Road users</span></a></li>
+        <li><a href="q3.html"><span class="nav-num">Q3</span> <span class="nav-name">Age and sex</span></a></li>
+        <li><a href="q4.html" aria-current="page"><span class="nav-num">Q4</span> <span class="nav-name">States</span></a></li>
+        <li><a href="q5.html"><span class="nav-num">Q5</span> <span class="nav-name">First Nations</span></a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap page-main">
+
+    <section id="q4" class="story" aria-labelledby="q4-title">
+      <p class="q-num">Question 4</p>
+      <h2 id="q4-title">How do state and territory trends differ, and what do raw counts hide?</h2>
+      <p>Queensland rose 65.2% from 2011 to 2021, with no data break noted. Victoria rose 37.4% from 2012. NSW fell from 10,618 to 9,003, but a change in definition affects that comparison. Shaded areas mark these data breaks.</p>
+
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Measure">
+          <button type="button" class="seg" data-value="count" aria-pressed="true">Count</button>
+          <button type="button" class="seg" data-value="rate" aria-pressed="false">Rate per 100,000</button>
+        </div>
+        <h3 class="chart-title" id="q4-title-chart">Hospitalisations by state and territory, 2011–2021</h3>
+        <div id="q4-grid" class="sm-grid" role="img" aria-labelledby="q4-title-chart" aria-describedby="q4-summary"></div>
+        <p id="q4-summary" class="chart-note"></p>
+        <p class="source">Source: BITRE hospitalised injury data; population from ABS (state_annual.csv).</p>
+      </div>
+      <p class="caveat">The eight states and territories don’t add up to the national total (33,553 against 34,033 in 2011). That’s expected, because the national figure also includes people with an unrecorded or migratory residence.</p>
+    </section>
+
+    <nav class="pager" aria-label="Question pages">
+      <a class="pager-link pager-prev" href="q3.html"><span class="pager-dir">← Previous</span><span class="pager-name">Q3 · Age and sex</span></a>
+      <a class="pager-link pager-next" href="q5.html"><span class="pager-dir">Next →</span><span class="pager-name">Q5 · First Nations people</span></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Group 8 · COS30045 · Data: Bureau of Infrastructure and Transport Research Economics (BITRE). Prototype 1, November 2026.</p>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/q4.js"></script>
+</body>
+</html>
