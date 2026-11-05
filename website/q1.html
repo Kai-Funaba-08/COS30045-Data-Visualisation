@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q1 National trend · Road Injuries in Australia</title>
+  <meta name="description" content="How did national counts change from 2011 to 2021, and what happened around 2020?">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-q1">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap site-nav-inner">
+      <a class="brand" href="index.html">Road Injuries in Australia</a>
+      <ol class="nav-links">
+        <li><a href="q1.html" aria-current="page"><span class="nav-num">Q1</span> <span class="nav-name">National trend</span></a></li>
+        <li><a href="q2.html"><span class="nav-num">Q2</span> <span class="nav-name">Road users</span></a></li>
+        <li><a href="q3.html"><span class="nav-num">Q3</span> <span class="nav-name">Age and sex</span></a></li>
+        <li><a href="q4.html"><span class="nav-num">Q4</span> <span class="nav-name">States</span></a></li>
+        <li><a href="q5.html"><span class="nav-num">Q5</span> <span class="nav-name">First Nations</span></a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap page-main">
+
+    <section id="q1" class="story" aria-labelledby="q1-title">
+      <p class="q-num">Question 1</p>
+      <h2 id="q1-title">How did national counts change from 2011 to 2021, and what happened around 2020?</h2>
+      <p>Road crash hospitalisations rose from <strong>34,033</strong> in 2011 to <strong>39,866</strong> in 2019, an increase of 17.1%. They fell 4.8% to <strong>37,966</strong> in 2020, then recovered to <strong>39,505</strong> in 2021.</p>
+
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Chart view">
+          <button type="button" class="seg" data-view="annual" aria-pressed="true">Annual, 2011–2021</button>
+          <button type="button" class="seg" data-view="monthly" aria-pressed="false">Monthly, 2019–2021</button>
+          <button type="button" class="seg seg-table" data-view="table" aria-pressed="false">Table</button>
+        </div>
+        <h3 class="chart-title" id="q1-chart-title">Hospitalisations per year, Australia</h3>
+        <div id="q1-chart" class="chart" role="img" aria-labelledby="q1-chart-title" aria-describedby="q1-summary"></div>
+        <div id="q1-table" class="table-view" hidden></div>
+        <p id="q1-summary" class="chart-note"></p>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (national_annual.csv, national_monthly.csv).</p>
+      </div>
+
+      <p>The sharpest monthly drop came in <strong>April 2020</strong>, with 2,357 hospitalisations, 32.4% below April 2019. This dip <em>coincides with</em> the first COVID-19 restrictions, when far fewer people were travelling. The data shows timing only; it cannot show that the restrictions caused the fall.</p>
+    </section>
+
+    <nav class="pager" aria-label="Question pages">
+      <a class="pager-link pager-prev" href="index.html"><span class="pager-dir">← Back</span><span class="pager-name">Overview</span></a>
+      <a class="pager-link pager-next" href="q2.html"><span class="pager-dir">Next →</span><span class="pager-name">Q2 · Road users</span></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Group 8 · COS30045 · Data: Bureau of Infrastructure and Transport Research Economics (BITRE). Prototype 1, November 2026.</p>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="js/q1.js"></script>
+</body>
+</html>
