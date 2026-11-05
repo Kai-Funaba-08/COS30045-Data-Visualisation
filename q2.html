@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q2 Road users · Road Injuries in Australia</title>
+  <meta name="description" content="Which road users drove the change?">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-q2">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap site-nav-inner">
+      <a class="brand" href="index.html">Road Injuries in Australia</a>
+      <ol class="nav-links">
+        <li><a href="q1.html"><span class="nav-num">Q1</span> <span class="nav-name">National trend</span></a></li>
+        <li><a href="q2.html" aria-current="page"><span class="nav-num">Q2</span> <span class="nav-name">Road users</span></a></li>
+        <li><a href="q3.html"><span class="nav-num">Q3</span> <span class="nav-name">Age and sex</span></a></li>
+        <li><a href="q4.html"><span class="nav-num">Q4</span> <span class="nav-name">States</span></a></li>
+        <li><a href="q5.html"><span class="nav-num">Q5</span> <span class="nav-name">First Nations</span></a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap page-main">
+
+    <section id="q2" class="story" aria-labelledby="q2-title">
+      <p class="q-num">Question 2</p>
+      <h2 id="q2-title">Which road users drove the change?</h2>
+      <p>Cyclists rose by <strong>2,772</strong> between 2011 and 2021, which is 50.7% of the net rise of 5,472. Their share went from 15.8% to 20.7%. In 2020, cyclists rose 14.1% while car drivers fell 9.4% and pedestrians fell 22.5%.</p>
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Choose years">
+          <label class="select-label">From <select id="q2-from"></select></label>
+          <label class="select-label">To <select id="q2-to"></select></label>
+          <button type="button" class="seg" data-preset="2011-2021">2011 → 2021</button>
+          <button type="button" class="seg" data-preset="2019-2020">2019 → 2020</button>
+          <button type="button" class="seg seg-table" id="q2-table-btn" aria-pressed="false">Table</button>
+        </div>
+        <h3 class="chart-title" id="q2-chart-title">Change in hospitalisations by road user</h3>
+        <div class="legend-row" aria-hidden="true"> 
+          <span><i class="swatch bar-up-sw"></i>Increase</span>
+          <span><i class="swatch bar-down-sw"></i>Decrease</span>
+        </div>
+        <div id="q2-chart" class="chart chart-auto" role="img" aria-labelledby="q2-chart-title" aria-describedby="q2-summary"></div>
+        <div id="q2-table" class="table-view" hidden></div>
+        <p id="q2-summary" class="chart-note"></p>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (road_user_annual.csv).</p>
+      </div>
+
+    </section>
+
+    <nav class="pager" aria-label="Question pages">
+      <a class="pager-link pager-prev" href="q1.html"><span class="pager-dir">← Previous</span><span class="pager-name">Q1 · National trend</span></a>
+      <a class="pager-link pager-next" href="q3.html"><span class="pager-dir">Next →</span><span class="pager-name">Q3 · Age and sex</span></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Group 8 · COS30045 · Data: Bureau of Infrastructure and Transport Research Economics (BITRE). Prototype 1, November 2026.</p>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/q2.js"></script>
+</body>
+</html>
