@@ -245,3 +245,12 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
 .break-band { fill: var(--break-band); }
 .break-label { fill: var(--text-muted); font-size: 10px; font-family: var(--font); }
 @media (max-width: 760px) { .sm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Q5 stacked bars */
+.seg-1 { fill: var(--seg-1); }
+.seg-2 { fill: var(--seg-2); }
+.seg-3 { fill: var(--seg-3); }
+.seg-label { font-size: 12px; font-weight: 600; font-family: var(--font); fill: #ffffff; pointer-events: none; }
+.seg-label.on-1 { fill: var(--seg-1-ink); }
+.seg-label.on-2 { fill: #ffffff; }
+.seg-label.on-3 { fill: var(--seg-3-ink); }
