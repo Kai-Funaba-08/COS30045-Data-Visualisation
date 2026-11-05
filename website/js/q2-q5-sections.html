@@ -1,0 +1,106 @@
+    <!-- Q2 -->
+    <section id="q2" class="story" aria-labelledby="q2-title">
+      <p class="q-num">Question 2</p>
+      <h2 id="q2-title">Which road users drove the change?</h2>
+      <p>Cyclists rose by <strong>2,772</strong> between 2011 and 2021, which is 50.7% of the net rise of 5,472. Their share went from 15.8% to 20.7%. In 2020, cyclists rose 14.1% while car drivers fell 9.4% and pedestrians fell 22.5%.</p>
+
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Choose years">
+          <label class="select-label">From <select id="q2-from"></select></label>
+          <label class="select-label">To <select id="q2-to"></select></label>
+          <button type="button" class="seg" data-preset="2011-2021">2011 → 2021</button>
+          <button type="button" class="seg" data-preset="2019-2020">2019 → 2020</button>
+          <button type="button" class="seg seg-table" id="q2-table-btn" aria-pressed="false">Table</button>
+        </div>
+        <h3 class="chart-title" id="q2-chart-title">Change in hospitalisations by road user</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch bar-up-sw"></i>Increase</span>
+          <span><i class="swatch bar-down-sw"></i>Decrease</span>
+        </div>
+        <div id="q2-chart" class="chart chart-auto" role="img" aria-labelledby="q2-chart-title" aria-describedby="q2-summary"></div>
+        <div id="q2-table" class="table-view" hidden></div>
+        <p id="q2-summary" class="chart-note"></p>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (road_user_annual.csv).</p>
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section id="q3" class="story" aria-labelledby="q3-title">
+      <p class="q-num">Question 3</p>
+      <h2 id="q3-title">Who is most affected by age and sex?</h2>
+      <p>From 2011 to 2021, hospitalisations of people aged <strong>65–74 rose 53.4%</strong>, while ages 17–25 fell 1.0%, against 16.1% overall.</p>
+
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Colour by">
+          <button type="button" class="seg" data-value="change" aria-pressed="true">Change since 2011</button>
+          <button type="button" class="seg" data-value="count" aria-pressed="false">Count</button>
+        </div>
+        <h3 class="chart-title" id="q3-heat-title">Hospitalisations by age group and year</h3>
+        <div id="q3-legend" class="legend-scale"></div>
+        <div id="q3-heatmap" class="chart chart-auto" role="img" aria-labelledby="q3-heat-title"></div>
+        <p class="chart-note">Hover a cell for the count. The 2021 column shows the change since 2011.</p>
+      </div>
+
+      <p>Males were <strong>65.3%</strong> of 2021 cases. In 2020, female hospitalisations fell 11.8% but male hospitalisations fell only 0.7%.</p>
+      <div class="chart-card">
+        <h3 class="chart-title" id="q3-lines-title">Hospitalisations per year by sex</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch series-1"></i>Male</span>
+          <span><i class="swatch series-2"></i>Female</span>
+        </div>
+        <div id="q3-lines" class="chart chart-auto" role="img" aria-labelledby="q3-lines-title"></div>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (age_annual.csv, sex_annual.csv). "Missing" age and sex records are left out.</p>
+      </div>
+      <p class="caveat">These are counts, so differences in population size and age structure explain part of the gaps.</p>
+    </section>
+
+    <!-- Q4 -->
+    <section id="q4" class="story" aria-labelledby="q4-title">
+      <p class="q-num">Question 4</p>
+      <h2 id="q4-title">How do state and territory trends differ, and what do raw counts hide?</h2>
+      <p>Queensland rose 65.2% from 2011 to 2021. Victoria rose 37.4% from 2012. NSW fell from 10,618 to 9,003, but a change in definition affects that comparison. Shaded areas mark these data breaks.</p>
+
+      <div class="chart-card">
+        <div class="controls" role="group" aria-label="Measure">
+          <button type="button" class="seg" data-value="count" aria-pressed="true">Count</button>
+          <button type="button" class="seg" data-value="rate" aria-pressed="false">Rate per 100,000</button>
+        </div>
+        <h3 class="chart-title" id="q4-title-chart">Hospitalisations by state and territory, 2011–2021</h3>
+        <div id="q4-grid" class="sm-grid" role="img" aria-labelledby="q4-title-chart" aria-describedby="q4-summary"></div>
+        <p id="q4-summary" class="chart-note"></p>
+        <p class="source">Source: BITRE hospitalised injury data; population from ABS (state_annual.csv).</p>
+      </div>
+    </section>
+
+    <!-- Q5 -->
+    <section id="q5" class="story" aria-labelledby="q5-title">
+      <p class="q-num">Question 5</p>
+      <h2 id="q5-title">How do First Nations patterns compare, within the data’s limits?</h2>
+      <p>First Nations hospitalisations rose <strong>90.2%</strong> from 2011 to 2021, against 14.9% for non-Indigenous Australians. In 2020 they rose 23.4% while non-Indigenous counts fell 6.1%.</p>
+
+      <div class="chart-card">
+        <h3 class="chart-title" id="q5-lines-title">Hospitalisations indexed to 2011 (2011 = 100)</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch series-1"></i>First Nations people</span>
+          <span><i class="swatch series-2"></i>Non-Indigenous</span>
+        </div>
+        <div id="q5-lines" class="chart chart-auto" role="img" aria-labelledby="q5-lines-title"></div>
+        <p class="chart-note">Indexing puts both groups on the same scale, so the lines show growth, not size.</p>
+      </div>
+
+      <div class="chart-card">
+        <div class="controls">
+          <label class="select-label">Year <select id="q5-year"></select></label>
+        </div>
+        <h3 class="chart-title" id="q5-bars-title">Where people lived: share by remoteness area</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch seg-1"></i>Major Cities</span>
+          <span><i class="swatch seg-2"></i>Regional</span>
+          <span><i class="swatch seg-3"></i>Remote</span>
+        </div>
+        <div id="q5-bars" class="chart chart-auto" role="img" aria-labelledby="q5-bars-title" aria-describedby="q5-summary"></div>
+        <p id="q5-summary" class="chart-note"></p>
+        <p class="source">Source: AIHW/BITRE First Nations hospitalised injury data, cleaned in KNIME (first_nation_annual.csv, first_nations_remoteness.csv).</p>
+      </div>
+      <p class="caveat">These are counts. Population size, age structure and better recording of First Nations status over time may all contribute to the differences.</p>
+    </section>
