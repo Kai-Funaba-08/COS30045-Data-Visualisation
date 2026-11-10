@@ -27,32 +27,29 @@
 
     <section id="q3" class="story" aria-labelledby="q3-title">
       <p class="q-num">Question 3</p>
-      <h2 id="q3-title">Who is most affected by age and sex?</h2>
-      <p>From 2011 to 2021, hospitalisations of people aged <strong>65–74 rose 53.4%</strong>, while ages 17–25 fell 1.0%, against 16.1% overall.</p>
+      <h2 id="q3-title">How do states and territories compare once population is taken into account?</h2>
+      <p>Raw counts make the biggest states look worst. Per 100,000 people, the picture changes: in 2021 the Northern Territory had <strong>286.1</strong>, Queensland 200.3 and New South Wales 111.2.</p>
 
       <div class="chart-card">
-        <div class="controls" role="group" aria-label="Colour by">
-          <button type="button" class="seg" data-value="change" aria-pressed="true">Change since 2011</button>
-          <button type="button" class="seg" data-value="count" aria-pressed="false">Count</button>
+        <div class="controls">
+          <label class="select-label" for="q3-year">Year
+            <input type="range" id="q3-year" class="year-slider" aria-describedby="q3-summary">
+            <output id="q3-year-out" for="q3-year" class="year-out"></output>
+          </label>
         </div>
-        <h3 class="chart-title" id="q3-heat-title">Hospitalisations by age group and year</h3>
-        <div id="q3-legend" class="legend-scale"></div>
-        <div id="q3-heatmap" class="chart chart-auto" role="img" aria-labelledby="q3-heat-title"></div>
-        <p class="chart-note">Hover a cell for the count. The 2021 column shows the change since 2011.</p>
-      </div>
-
-      <p>Males were <strong>65.3%</strong> of 2021 cases. In 2020, female hospitalisations fell 11.8% but male hospitalisations fell only 0.7%.</p>
-      <div class="chart-card">
-        <h3 class="chart-title" id="q3-lines-title">Hospitalisations per year by sex</h3>
-        <div class="legend-row" aria-hidden="true">
-          <span><i class="swatch series-1"></i>Male</span>
-          <span><i class="swatch series-2"></i>Female</span>
+        <h3 class="chart-title" id="q3-map-title">Hospitalisations per 100,000 people by state and territory</h3>
+        <div id="q3-legend" class="legend-scale" aria-hidden="true"></div>
+        <div class="map-layout">
+          <div id="q3-map" class="map-chart" role="img" aria-labelledby="q3-map-title" aria-describedby="q3-summary"></div>
+          <div id="q3-bars" class="map-bars" aria-hidden="true"></div>
         </div>
-        <div id="q3-lines" class="chart chart-auto" role="img" aria-labelledby="q3-lines-title"></div>
-        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (age_annual.csv, sex_annual.csv). "Missing" age and sex records are left out.</p>
+        <p id="q3-summary" class="chart-note"></p>
+        <p class="chart-note">† Data break. Victoria’s counts from 2012 aren’t comparable with 2011, and a definition change in NSW between 2017 and 2018 means later years aren’t comparable with earlier ones.</p>
+        <p class="source">Source: BITRE hospitalised injury data; population from ABS (state_annual.csv). Map: Natural Earth.</p>
       </div>
-      <p class="caveat">These are counts, so differences in population size and age structure explain part of the gaps.</p>
+      <p class="caveat">The eight states and territories don’t add up to the national total (33,553 against 34,033 in 2011). That’s expected, because the national figure also includes people with an unrecorded or migratory residence.</p>
     </section>
+
 
     <nav class="pager" aria-label="Question pages">
       <a class="pager-link pager-prev" href="q2.html"><span class="pager-dir">← Previous</span><span class="pager-name">Q2 · Road users</span></a>
