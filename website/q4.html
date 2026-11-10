@@ -27,21 +27,23 @@
 
     <section id="q4" class="story" aria-labelledby="q4-title">
       <p class="q-num">Question 4</p>
-      <h2 id="q4-title">How do state and territory trends differ, and what do raw counts hide?</h2>
-      <p>Queensland rose 65.2% from 2011 to 2021, with no data break noted. Victoria rose 37.4% from 2012. NSW fell from 10,618 to 9,003, but a change in definition affects that comparison. Shaded areas mark these data breaks.</p>
+      <h2 id="q4-title">Which road users drove the change from 2011 to 2021?</h2>
+      <p>Hospitalisations rose by 5,472, from 34,033 in 2011 to 39,505 in 2021. Pedal cyclists rose by <strong>2,772 (+51.4%)</strong>, which is about half of that rise. Car drivers (+21.7%) and motorcyclists (+17.4%) also grew, while pedestrians fell 15.3% and car passengers fell 7.4%.</p>
 
       <div class="chart-card">
-        <div class="controls" role="group" aria-label="Measure">
+        <div class="controls" role="group" aria-label="Colour the heatmap by">
           <button type="button" class="seg" data-value="count" aria-pressed="true">Count</button>
-          <button type="button" class="seg" data-value="rate" aria-pressed="false">Rate per 100,000</button>
+          <button type="button" class="seg" data-value="change" aria-pressed="false">% change from 2011</button>
         </div>
-        <h3 class="chart-title" id="q4-title-chart">Hospitalisations by state and territory, 2011–2021</h3>
-        <div id="q4-grid" class="sm-grid" role="img" aria-labelledby="q4-title-chart" aria-describedby="q4-summary"></div>
+        <h3 class="chart-title" id="q4-title-chart">Hospitalisations by road user, 2011–2021</h3>
+        <div id="q4-legend" class="legend-scale" aria-hidden="true"></div>
+        <div id="q4-heat" class="chart chart-auto" role="img" aria-labelledby="q4-title-chart" aria-describedby="q4-summary"></div>
         <p id="q4-summary" class="chart-note"></p>
-        <p class="source">Source: BITRE hospitalised injury data; population from ABS (state_annual.csv).</p>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (road_user_annual.csv).</p>
       </div>
-      <p class="caveat">The eight states and territories don’t add up to the national total (33,553 against 34,033 in 2011). That’s expected, because the national figure also includes people with an unrecorded or migratory residence.</p>
+      <p class="caveat">These are counts, not rates, so they also reflect how much each group travels. The data can’t show causes: the 2020 changes coincide with COVID-19 restrictions.</p>
     </section>
+
 
     <nav class="pager" aria-label="Question pages">
       <a class="pager-link pager-prev" href="q3.html"><span class="pager-dir">← Previous</span><span class="pager-name">Q3 · Age and sex</span></a>
