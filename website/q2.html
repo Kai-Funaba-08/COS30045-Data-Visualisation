@@ -27,28 +27,31 @@
 
     <section id="q2" class="story" aria-labelledby="q2-title">
       <p class="q-num">Question 2</p>
-      <h2 id="q2-title">Which road users drove the change?</h2>
-      <p>Cyclists rose by <strong>2,772</strong> between 2011 and 2021, which is 50.7% of the net rise of 5,472. Their share went from 15.8% to 20.7%. In 2020, cyclists rose 14.1% while car drivers fell 9.4% and pedestrians fell 22.5%.</p>
+      <h2 id="q2-title">How do males and females compare, and how did each change in 2020?</h2>
+      <p>Males were <strong>65.3%</strong> of people hospitalised in 2021. In 2020, female hospitalisations fell 11.8% while male hospitalisations fell only 0.7%. That pattern coincides with COVID-19 restrictions, but the data can’t show the cause.</p>
+
       <div class="chart-card">
-        <div class="controls" role="group" aria-label="Choose years">
-          <label class="select-label">From <select id="q2-from"></select></label>
-          <label class="select-label">To <select id="q2-to"></select></label>
-          <button type="button" class="seg" data-preset="2011-2021">2011 → 2021</button>
-          <button type="button" class="seg" data-preset="2019-2020">2019 → 2020</button>
-          <button type="button" class="seg seg-table" id="q2-table-btn" aria-pressed="false">Table</button>
+        <div class="controls" role="group" aria-label="Show">
+          <button type="button" class="seg" data-value="count" aria-pressed="true">Count</button>
+          <button type="button" class="seg" data-value="change" aria-pressed="false">% change on previous year</button>
         </div>
-        <h3 class="chart-title" id="q2-chart-title">Change in hospitalisations by road user</h3>
-        <div class="legend-row" aria-hidden="true"> 
-          <span><i class="swatch bar-up-sw"></i>Increase</span>
-          <span><i class="swatch bar-down-sw"></i>Decrease</span>
+        <h3 class="chart-title" id="q2-bars-title">Hospitalisations of females and males, 2011–2021</h3>
+        <div class="legend-row" aria-hidden="true">
+          <span><i class="swatch series-1"></i>Females</span>
+          <span><i class="swatch series-2"></i>Males</span>
         </div>
-        <div id="q2-chart" class="chart chart-auto" role="img" aria-labelledby="q2-chart-title" aria-describedby="q2-summary"></div>
-        <div id="q2-table" class="table-view" hidden></div>
+        <div id="q2-bars" class="chart chart-auto" role="img" aria-labelledby="q2-bars-title" aria-describedby="q2-summary"></div>
         <p id="q2-summary" class="chart-note"></p>
-        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (road_user_annual.csv).</p>
       </div>
 
+      <div class="chart-card">
+        <h3 class="chart-title" id="q2-age-title">By age group: change from 2011 to 2021</h3>
+        <div id="q2-age" class="chart chart-auto" role="img" aria-labelledby="q2-age-title" aria-describedby="q2-age-note"></div>
+        <p id="q2-age-note" class="chart-note">Ages 65–74 rose 53.4% and ages 17–25 fell 1.0%, against 16.1% for all ages. The age data isn’t split by sex, so this is shown separately.</p>
+        <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (sex_annual.csv, age_annual.csv). A small group recorded as intersex, indeterminate or missing (0–7 a year) is left out.</p>
+      </div>
     </section>
+
 
     <nav class="pager" aria-label="Question pages">
       <a class="pager-link pager-prev" href="q1.html"><span class="pager-dir">← Previous</span><span class="pager-name">Q1 · National trend</span></a>
