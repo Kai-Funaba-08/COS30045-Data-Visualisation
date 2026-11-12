@@ -237,6 +237,45 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
 .break-band { fill: var(--break-band); }
 .break-label { fill: var(--text-muted); font-size: 10px; font-family: var(--font); }
 @media (max-width: 760px) { .sm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Q4 Count tab: one line per road user */
+:root {
+  --ru-1: #2a78d6;   /* car driver */
+  --ru-2: #eb6834;   /* motorcyclist */
+  --ru-3: #1a9a62;   /* pedal cyclist */
+  --ru-4: #8a5cd1;   /* car passenger */
+  --ru-5: #c4407a;   /* pedestrian */
+  /* smaller groups */
+  --ru-6: #12939a; --ru-7: #c98a00; --ru-8: #9a6237; --ru-9: #5a6d91;
+  --ru-10: #6f8f1f; --ru-11: #d64545; --ru-12: #7a7974;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ru-1: #3987e5; --ru-2: #e5743f; --ru-3: #34b27a; --ru-4: #a582e3; --ru-5: #de6497;
+    --ru-6: #2fb3ba; --ru-7: #e0a52a; --ru-8: #c08a5e; --ru-9: #8a9cc4; --ru-10: #93b33f; --ru-11: #ec6b6b; --ru-12: #a8a79f;
+  }
+}
+:root[data-theme="dark"] { --ru-1: #3987e5; --ru-2: #e5743f; --ru-3: #34b27a; --ru-4: #a582e3; --ru-5: #de6497;
+  --ru-6: #2fb3ba; --ru-7: #e0a52a; --ru-8: #c08a5e; --ru-9: #8a9cc4; --ru-10: #93b33f; --ru-11: #ec6b6b; --ru-12: #a8a79f; }
+
+.line.ru-major { stroke-width: 2.5px; }
+.ru-hit { fill: transparent; cursor: crosshair; }
+.swatch.ru-band-sw { background: var(--highlight-band); border: 1px solid var(--border); }
+#q4-legend .legend-row { gap: 4px 16px; }
+.tt-table { border-collapse: collapse; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.tt-table td { padding: 1px 0; }
+.tt-table td.num { text-align: right; padding-left: 12px; }
+.tt-table td.tt-sep { padding-top: 4px; }
+.tt-table .swatch { width: 10px; height: 10px; }
+.ru-sub { font-size: 14px; font-weight: 600; color: var(--text-primary) !important; margin: 16px 0 0; }
+.ru-sub-note { font-weight: 400; color: var(--text-muted); }
+.ru-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+/* Q4 heatmap numbers: smaller, and let the hover pass through to the cell */
+#q4-heat .cell-label {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font, inherit);
+  pointer-events: none;
+}
 
 /* Q5 donuts */
 .donut-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
