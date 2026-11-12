@@ -213,6 +213,10 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
 .zero-line { stroke: var(--text-muted); stroke-width: 1px; }
 .cat-label { fill: var(--text-secondary); font-size: 12px; font-family: var(--font); }
 .val-label { fill: var(--text-primary); font-size: 12px; font-family: var(--font); font-variant-numeric: tabular-nums; }
+/* Q2 grouped bars */
+.gbar.series-1 { fill: var(--series-1); }
+.gbar.series-2 { fill: var(--series-2); }
+.gbar:hover { opacity: .85; }
 
 /* Q3 map */
 .map-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 16px; align-items: center; margin-top: 4px; }
