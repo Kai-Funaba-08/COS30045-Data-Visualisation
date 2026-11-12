@@ -114,14 +114,18 @@
     const d20 = byYear.get(2020), d19 = byYear.get(2019);
     if (d20 && d19) {
       const ax = x(2020), ay = y(d20.value);
-      const tx = width < 500 ? ax - 8 : ax - 14;
       g.append("line").attr("class", "annot-line")
         .attr("x1", ax).attr("y1", ay + 7).attr("x2", ax).attr("y2", ay + 28);
-      const t = g.append("text").attr("class", "annot-text").attr("text-anchor", "end")
-        .attr("x", tx).attr("y", ay + 44);
+      // label centred under the 2020 point
+      const t = g.append("text").attr("class", "annot-text").attr("text-anchor", "middle")
+        .attr("x", ax).attr("y", ay + 44);
       t.append("tspan").attr("class", "strong").text(`${fmt(d20.value)} (${pct(d20.value / d19.value - 1)})`);
-      t.append("tspan").attr("x", tx).attr("dy", "1.3em").text("Coincides with COVID-19");
-      t.append("tspan").attr("x", tx).attr("dy", "1.3em").text("restrictions");
+      t.append("tspan").attr("x", ax).attr("dy", "1.3em").text("Coincides with COVID-19");
+      t.append("tspan").attr("x", ax).attr("dy", "1.3em").text("restrictions");
+      // on narrow screens, slide it left just enough so it isn't cut off at the right edge
+      const half = t.node().getBBox().width / 2;
+      const tx = Math.min(ax, iw + margin.right - half - 2);
+      if (tx !== ax) t.attr("x", tx).selectAll("tspan").attr("x", tx);
     }
     const first = annual[0];
     g.append("text").attr("class", "annot-text")
@@ -175,12 +179,25 @@
     if (apr20 && apr19) {
       const ax = x(apr20.date), ay = y(apr20.value);
       g.append("circle").attr("class", "dot").attr("cx", ax).attr("cy", ay).attr("r", 4);
-      const tx = ax + 12;
-      const t = g.append("text").attr("class", "annot-text").attr("x", tx).attr("y", ay - 4);
-      t.append("tspan").attr("class", "strong").text(`April 2020: ${fmt(apr20.value)}`);
-      t.append("tspan").attr("x", tx).attr("dy", "1.3em").text(`${pct(apr20.value / apr19.value - 1)} on April 2019.`);
-      t.append("tspan").attr("x", tx).attr("dy", "1.3em").text("Coincides with the first");
-      t.append("tspan").attr("x", tx).attr("dy", "1.3em").text("COVID-19 restrictions.");
+      g.append("line").attr("class", "annot-line")
+        .attr("x1", ax).attr("y1", ay + 7).attr("x2", ax).attr("y2", ay + 20);
+      // label centred under the April 2020 point
+      const t = g.append("text").attr("class", "annot-text").attr("text-anchor", "middle")
+        .attr("x", ax).attr("y", ay + 34);
+      const change = pct(apr20.value / apr19.value - 1);
+      if (width < 500) {
+        // phones: 3 lines so the label stays above the x-axis
+        t.append("tspan").attr("class", "strong").text(`April 2020: ${fmt(apr20.value)} (${change})`);
+      } else {
+        t.append("tspan").attr("class", "strong").text(`April 2020: ${fmt(apr20.value)}`);
+        t.append("tspan").attr("x", ax).attr("dy", "1.3em").text(`${change} on April 2019.`);
+      }
+      t.append("tspan").attr("x", ax).attr("dy", "1.3em").text("Coincides with the first");
+      t.append("tspan").attr("x", ax).attr("dy", "1.3em").text("COVID-19 restrictions.");
+      // keep it inside the chart on narrow screens
+      const half = t.node().getBBox().width / 2;
+      const tx = Math.max(half - margin.left + 2, Math.min(ax, iw + margin.right - half - 2));
+      if (tx !== ax) t.attr("x", tx).selectAll("tspan").attr("x", tx);
     }
 
     hoverLayer(g, iw, ih, data,
