@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +28,6 @@
     <section id="q3" class="story" aria-labelledby="q3-title">
       <p class="q-num">Question 3</p>
       <h2 id="q3-title">How do states and territories compare once population is taken into account?</h2>
-      <p>Raw counts make the biggest states look worst. Per 100,000 people, the picture changes: in 2021 the Northern Territory had <strong>286.1</strong>, Queensland 200.3 and New South Wales 111.2.</p>
-
       <div class="chart-card">
         <div class="controls">
           <label class="select-label" for="q3-year">Year
@@ -38,6 +36,7 @@
           </label>
         </div>
         <h3 class="chart-title" id="q3-map-title">Hospitalisations per 100,000 people by state and territory</h3>
+        <p class="chart-desc">Raw counts make the biggest states look worst. Per 100,000 people, the picture changes: in <strong>2021</strong> the Northern Territory (<strong>NT</strong>) had <strong>286</strong>, Queensland (<strong>Qld</strong>) <strong>200</strong> and New South Wales (<strong>NSW†</strong>) <strong>111</strong>. The colour key runs from the <strong>Lowest</strong> rate (left) to the <strong>Highest</strong> (right).</p>
         <div id="q3-legend" class="legend-scale" aria-hidden="true"></div>
         <div class="map-layout">
           <div id="q3-map" class="map-chart" role="img" aria-labelledby="q3-map-title" aria-describedby="q3-summary"></div>
@@ -69,6 +68,7 @@
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/q3.js"></script>
+  <script src="js/table-toggle.js"></script>
   <script src="js/tap.js"></script>
 </body>
 </html>

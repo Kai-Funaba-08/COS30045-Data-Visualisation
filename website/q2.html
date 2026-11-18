@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,6 @@
      <section id="q2" class="story" aria-labelledby="q2-title">
       <p class="q-num">Question 2</p>
       <h2 id="q2-title">How do males and females compare, and how did each change in 2020?</h2>
-      <p>Males were <strong>65.3%</strong> of people hospitalised in 2021. In 2020, female hospitalisations fell 11.8% while male hospitalisations fell only 0.7%. That pattern coincides with COVID-19 restrictions, but the data can’t show the cause.</p>
  
       <div class="chart-card">
         <div class="controls" role="group" aria-label="Show">
@@ -36,6 +35,7 @@
           <button type="button" class="seg" data-value="change" aria-pressed="false">% change on previous year</button>
         </div>
         <h3 class="chart-title" id="q2-bars-title">Hospitalisations of females and males, 2011–2021</h3>
+        <p class="chart-desc"><strong><i class="swatch series-2"></i>Males</strong> were 65.3% of people hospitalised in <strong>2021</strong>. In the shaded <strong>2020</strong> column, <strong><i class="swatch series-1"></i>females</strong> fell 11.8% while males fell only 0.7% (switch to <strong>% change on previous year</strong> to see it). That pattern coincides with COVID-19 restrictions, but the data can’t show the cause.</p>
         <div class="legend-row" aria-hidden="true">
           <span><i class="swatch series-1"></i>Females</span>
           <span><i class="swatch series-2"></i>Males</span>
@@ -46,8 +46,8 @@
  
       <div class="chart-card">
         <h3 class="chart-title" id="q2-age-title">By age group: change from 2011 to 2021</h3>
+        <p id="q2-age-note" class="chart-desc">Ages <strong>65–74</strong> rose <strong>+53.4%</strong> and ages <strong>17–25</strong> fell <strong>−1.0%</strong>, against <strong>All ages +16.1%</strong> (dashed line). The age data isn’t split by sex, so this is shown separately.</p>
         <div id="q2-age" class="chart chart-auto" role="img" aria-labelledby="q2-age-title" aria-describedby="q2-age-note"></div>
-        <p id="q2-age-note" class="chart-note">Ages 65–74 rose 53.4% and ages 17–25 fell 1.0%, against 16.1% for all ages. The age data isn’t split by sex, so this is shown separately.</p>
         <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (sex_annual.csv, age_annual.csv). A small group recorded as intersex, indeterminate or missing (0–7 a year) is left out.</p>
       </div>
     </section>
@@ -71,6 +71,7 @@
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/q2.js"></script>
+  <script src="js/table-toggle.js"></script>
   <script src="js/tap.js"></script>
 </body>
 </html>

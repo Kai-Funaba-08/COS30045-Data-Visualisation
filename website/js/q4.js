@@ -193,7 +193,7 @@
         .attr("x", d => x(d.year) + x.bandwidth() / 2)
         .attr("y", d => y(d.user) + y.bandwidth() / 2)
         .attr("dy", "0.35em").attr("text-anchor", "middle")
-        .attr("fill", d => dark(d) ? "#ffffff" : "#0b0b0b")
+        .attr("fill", d => dark(d) ? "#ffffff" : css("--text-primary"))
         .text(d => pct0(d.change));
     }
 
