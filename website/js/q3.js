@@ -133,8 +133,8 @@
     ls.selectAll("text").data([lo, hi]).join("text").attr("class", "legend-text")
       .attr("x", (d, i) => i === 0 ? 10 : 10 + w).attr("y", 30)
       .attr("text-anchor", (d, i) => i === 0 ? "start" : "end")
-      .text((d, i) => `${Math.round(d)}${i ? " per 100,000" : ""}`);
-
+      .text((d, i) => i ? `Highest: ${Math.round(d)} per 100,000` : `Lowest: ${Math.round(d)}`);
+      
     /* ---------- text summary (also read by screen readers) ---------- */
     const top = sorted[0], bottom = sorted[sorted.length - 1];
     summaryEl.textContent = `In ${yr}, ${STATE_NAMES[top.state]} had the highest rate (${top.rate.toFixed(1)} per 100,000) and ` +

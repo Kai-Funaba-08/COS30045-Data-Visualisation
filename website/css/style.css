@@ -357,3 +357,31 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
   .pager { grid-template-columns: 1fr; }
   .pager-next { text-align: left; }
 }
+
+/* ===== Usability fixes (Prototype 2 feedback) ===== */
+
+/* Fix 1: description sits inside the chart card, right next to the chart.
+   Bold words are the labels/numbers you can find in the chart. */
+.chart-desc {
+  margin: 4px 0 12px; padding: 8px 12px;
+  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+  background: var(--card); color: var(--text-secondary);
+  font-size: 16px; line-height: 1.55;
+}
+.chart-desc strong { color: var(--text-primary); font-weight: 700; white-space: nowrap; }
+.chart-desc .swatch { margin-right: 4px; }
+.chart-desc-after { margin: 12px 0 8px; }
+
+/* Fix 2: no more black text in dark mode. */
+.legend-text { fill: var(--text-secondary); font-size: 12px; font-family: var(--font); }
+:where(svg text:not([fill])) { fill: var(--text-primary); }
+
+/* Fix 3: Q3 map colours, lowest rate is now a clear blue. */
+:root { --seq-low: #9ec5f4; --seq-high: #0b2f5e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --seq-low: #1f4f8f; --seq-high: #d3e5fb; }
+}
+:root[data-theme="dark"] { --seq-low: #1f4f8f; --seq-high: #d3e5fb; }
+
+/* Always white background */
+:root { --bg: #ffffff; }

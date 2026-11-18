@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +28,6 @@
     <section id="q1" class="story" aria-labelledby="q1-title">
       <p class="q-num">Question 1</p>
       <h2 id="q1-title">How did national counts change from 2011 to 2021, and what happened around 2020?</h2>
-      <p>Road crash hospitalisations rose from <strong>34,033</strong> in 2011 to <strong>39,866</strong> in 2019, an increase of 17.1%. They fell 4.8% to <strong>37,966</strong> in 2020, then recovered to <strong>39,505</strong> in 2021.</p>
-
       <div class="chart-card">
         <div class="controls" role="group" aria-label="Chart view">
           <button type="button" class="seg" data-view="annual" aria-pressed="true">Annual, 2011–2021</button>
@@ -37,13 +35,13 @@
           <button type="button" class="seg seg-table" data-view="table" aria-pressed="false">Table</button>
         </div>
         <h3 class="chart-title" id="q1-chart-title">Hospitalisations per year, Australia</h3>
+        <p class="chart-desc">Road crash hospitalisations rose from <strong>34,033</strong> in <strong>2011</strong> to 39,866 in 2019, an increase of 17.1%. They fell to <strong>37,966 (−4.8%)</strong> in the shaded <strong>2020</strong> band, then recovered to 39,505 in <strong>2021</strong>.</p>
         <div id="q1-chart" class="chart" role="img" aria-labelledby="q1-chart-title" aria-describedby="q1-summary"></div>
         <div id="q1-table" class="table-view" hidden></div>
         <p id="q1-summary" class="chart-note"></p>
+        <p class="chart-desc chart-desc-after">Switch to <strong>Monthly, 2019–2021</strong>: the sharpest drop came in <strong>April 2020</strong>, with 2,357 hospitalisations, 32.4% below April 2019. This dip <em>coincides with</em> the first COVID-19 restrictions, when far fewer people were travelling. The data shows timing only; it cannot show that the restrictions caused the fall.</p>
         <p class="source">Source: BITRE hospitalised injury data, cleaned in KNIME (national_annual.csv, national_monthly.csv).</p>
       </div>
-
-      <p>The sharpest monthly drop came in <strong>April 2020</strong>, with 2,357 hospitalisations, 32.4% below April 2019. This dip <em>coincides with</em> the first COVID-19 restrictions, when far fewer people were travelling. The data shows timing only; it cannot show that the restrictions caused the fall.</p>
     </section>
 
     <nav class="pager" aria-label="Question pages">
