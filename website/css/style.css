@@ -385,3 +385,12 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
 
 /* Always white background */
 :root { --bg: #ffffff; }
+
+/* Table button on Q2-Q5 */
+.seg.seg-dim[aria-pressed="true"] { background: transparent; color: var(--text-secondary); border-color: var(--border); }
+.table-view caption { caption-side: top; padding-bottom: 6px; }
+.table-view tbody tr:hover { background: var(--grid); }
+.chart-card [hidden] { display: none !important; }
+.table-view td:first-child, .table-view th:first-child { white-space: nowrap; position: sticky; left: 0; background: var(--card); }
+.table-view table { font-size: 13px; }
+.table-view th { white-space: nowrap; }
